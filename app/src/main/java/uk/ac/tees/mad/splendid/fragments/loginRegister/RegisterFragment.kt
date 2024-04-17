@@ -1,5 +1,6 @@
 package uk.ac.tees.mad.splendid.fragments.loginRegister
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import uk.ac.tees.mad.splendid.R
+import uk.ac.tees.mad.splendid.ShoppingActivity
 import uk.ac.tees.mad.splendid.data.User
 import uk.ac.tees.mad.splendid.databinding.FragmentRegisterBinding
 import uk.ac.tees.mad.splendid.util.RegisterValidation
@@ -62,6 +64,11 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
                     }
                     is Resource.Success -> {
                         binding.buttonRegisterRegister.revertAnimation()
+                        Intent(requireActivity(), ShoppingActivity::class.java).also { intent ->
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(intent)
+                        }
+
                     }
                     is Resource.Error -> {
                         Log.e(TAG,it.message.toString())
