@@ -15,15 +15,6 @@
             app:destination="@id/productDetailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="uk.ac.tees.mad.splendid.fragments.shopping.SearchFragment"
-        android:label="SearchFragment"
-        tools:layout="@layout/fragment_search">
-        <action
-            android:id="@+id/action_searchFragment_to_productDetailsFragment"
-            app:destination="@id/productDetailsFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/cartFragment"
         android:name="uk.ac.tees.mad.splendid.fragments.shopping.CartFragment"
         android:label="CartFragment"
