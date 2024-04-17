@@ -1,22 +1,18 @@
 package uk.ac.tees.mad.splendid.fragments.shopping
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.kelineyt.fragments.categories.ChairFragment
-import com.example.kelineyt.fragments.categories.CupboardFragment
-import com.example.kelineyt.fragments.categories.FurnitureFragment
-import com.example.kelineyt.fragments.categories.MainCategoryFragment
-import com.example.kelineyt.fragments.categories.TableFragment
-import com.google.android.material.tabs.TabLayoutMediator
 import uk.ac.tees.mad.splendid.R
 import uk.ac.tees.mad.splendid.adapters.HomeViewpagerAdapter
 import uk.ac.tees.mad.splendid.databinding.FragmentHomeBinding
+import uk.ac.tees.mad.splendid.fragments.categories.*
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
-
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
@@ -36,9 +32,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             ChairFragment(),
             CupboardFragment(),
             TableFragment(),
+            AccessoryFragment(),
             FurnitureFragment()
         )
+
         binding.viewpagerHome.isUserInputEnabled = false
+
         val viewPager2Adapter =
             HomeViewpagerAdapter(categoriesFragments, childFragmentManager, lifecycle)
         binding.viewpagerHome.adapter = viewPager2Adapter
@@ -48,12 +47,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 1 -> tab.text = "Chair"
                 2 -> tab.text = "Cupboard"
                 3 -> tab.text = "Table"
-                4 -> tab.text = "Furniture"
+                4 -> tab.text = "Accessory"
+                5 -> tab.text = "Furniture"
             }
         }.attach()
-
-
     }
-
-
 }

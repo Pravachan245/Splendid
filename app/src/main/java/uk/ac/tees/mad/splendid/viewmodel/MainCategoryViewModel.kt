@@ -1,14 +1,16 @@
 package uk.ac.tees.mad.splendid.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import uk.ac.tees.mad.splendid.data.Product
+import uk.ac.tees.mad.splendid.util.Resource
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import uk.ac.tees.mad.splendid.data.Product
-import uk.ac.tees.mad.splendid.util.Resource
 import javax.inject.Inject
 
 @HiltViewModel
@@ -27,7 +29,6 @@ class MainCategoryViewModel @Inject constructor(
     val bestProducts: StateFlow<Resource<List<Product>>> = _bestProducts
 
     private val pagingInfo = PagingInfo()
-
 
     init {
         fetchSpecialProducts()
@@ -91,7 +92,6 @@ class MainCategoryViewModel @Inject constructor(
             }
         }
     }
-
 }
 
 internal data class PagingInfo(

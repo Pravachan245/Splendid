@@ -1,6 +1,6 @@
 package uk.ac.tees.mad.splendid.util
 
-sealed class Resource<T> (
+sealed class Resource<T>(
     val data: T? = null,
     val message: String? = null
 ) {

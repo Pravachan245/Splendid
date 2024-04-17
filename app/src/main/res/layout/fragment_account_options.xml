@@ -31,54 +31,63 @@
 
         <TextView
             android:id="@+id/tvRightAddressForShopping"
+            style="@style/h4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/h4"
             android:layout_marginTop="45dp"
-            app:layout_constraintTop_toBottomOf="@id/tvAppName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
             android:text="@string/rightAddress"
             android:textAlignment="center"
-            android:gravity="center"
             android:textSize="35sp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAppName" />
 
         <TextView
             android:id="@+id/tvQuality"
+            style="@style/h2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/h2"
-            app:layout_constraintStart_toStartOf="@id/tvRightAddressForShopping"
-            app:layout_constraintEnd_toEndOf="@id/tvRightAddressForShopping"
-            app:layout_constraintTop_toBottomOf="@id/tvRightAddressForShopping"
-            android:textAlignment="center"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="@string/qulity"
-            android:layout_marginTop="15dp"
-            />
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/tvRightAddressForShopping"
+            app:layout_constraintStart_toStartOf="@id/tvRightAddressForShopping"
+            app:layout_constraintTop_toBottomOf="@id/tvRightAddressForShopping" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonRegisterAccountOptions"
+            style="@style/blueButtonStyle"
             android:layout_width="@dimen/mediumButtonWidth"
             android:layout_height="@dimen/mediumButtonHeight"
-            style="@style/blueButtonStyle"
-            app:layout_constraintTop_toBottomOf="@id/tvQuality"
-            app:layout_constraintStart_toStartOf="@id/tvQuality"
-            app:layout_constraintEnd_toEndOf="@id/tvQuality"
+            android:text="Register"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Register"/>
+            app:layout_constraintEnd_toEndOf="@id/tvRightAddressForShopping"
+            app:layout_constraintStart_toStartOf="@id/tvRightAddressForShopping"
+            app:layout_constraintTop_toBottomOf="@id/tvRightAddressForShopping" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonLoginAccountOptions"
             style="@style/whiteButtonStyle"
             android:layout_width="@dimen/mediumButtonWidth"
             android:layout_height="@dimen/mediumButtonHeight"
+            android:layout_marginTop="10dp"
             android:text="Login"
             app:layout_constraintEnd_toEndOf="@id/tvQuality"
             app:layout_constraintStart_toStartOf="@id/tvQuality"
-            app:layout_constraintTop_toBottomOf="@+id/buttonRegisterAccountOptions"
-            android:layout_marginTop="10dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegisterAccountOptions" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonProductsAdder"
+            style="@style/whiteButtonStyle"
+            android:layout_width="@dimen/mediumButtonWidth"
+            android:layout_height="@dimen/mediumButtonHeight"
+            android:layout_marginTop="10dp"
+            android:text="Seller Login"
+            app:layout_constraintEnd_toEndOf="@id/tvQuality"
+            app:layout_constraintStart_toStartOf="@id/tvQuality"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLoginAccountOptions" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
