@@ -47,6 +47,7 @@ class ProfileFragment : Fragment() {
             findNavController().navigate(R.id.action_profileFragment_to_ordersFragment)
         }
 
+/*
         binding.linearBilling.setOnClickListener {
             val action = ProfileFragmentDirections.actionProfileFragmentToBillingFragment(
                 0f,
@@ -55,6 +56,7 @@ class ProfileFragment : Fragment() {
             )
             findNavController().navigate(action)
         }
+*/
 
         binding.linearLogOut.setOnClickListener {
             viewModel.logout()
@@ -63,7 +65,9 @@ class ProfileFragment : Fragment() {
             requireActivity().finish()
         }
 
+/*
         binding.tvVersion.text = "Version 1.0"
+*/
 
         lifecycleScope.launchWhenStarted {
             viewModel.user.collectLatest {
